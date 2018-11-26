@@ -3,7 +3,7 @@ let runElections = function(){
         resolve("\nElections are now running\n ");
     })
 }
-ss
+
 let secureElections = function(){
     return new Promise(function(resolve, reject){
         resolve("Elections are now secured \n");
