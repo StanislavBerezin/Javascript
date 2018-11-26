@@ -1,4 +1,4 @@
-const name = 'Max';
+const name = 'Stas';
 let age = 29;
 const hasHobbies = true;
 
