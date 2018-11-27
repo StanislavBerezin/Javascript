@@ -16,8 +16,6 @@ console.log(son_2.getArg)
 // there is a chain of prototype objects, our object, then parent object, 
 // then lastly is the master object which contains everything, thats how js operates
 
-
-// 
 // Base class
 let Job = function(){
     this.pays = true
