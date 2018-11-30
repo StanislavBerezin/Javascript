@@ -24,3 +24,53 @@ let bound = shouldAcessObject.bind(object);
 
 // then we can just execute it, as its all binded
 console.log(bound(1, 2, 3));
+
+let add = function(c) {
+  console.log(this.a + this.b + c);
+};
+let obj = {
+  a: 1,
+  b: 2
+};
+
+// last param is for add, by doing call, add can acess A, B
+add.call(obj, 3);
+
+let argsToArray = function() {
+  // by doing this we transfer arguments into an array
+  // array []. has method slice and in it we call arguments
+  console.log([].slice.call(arguments));
+};
+
+argsToArray(1, 2, 3);
+
+let mammal = function(legs) {
+  this.legs = legs;
+};
+//here we call for mammal and bind it to cat
+let cat = function(legs, isDomestic) {
+  mammal.call(this, legs);
+  this.isDomestic = isDomestic;
+};
+
+let lion = new cat(4, false);
+console.log(lion);
+
+// apply, an array doesnt have Math.in, so we can apply it to our
+// array, hence giving us the results
+let numArray = [1, 2, 3];
+
+console.log(Math.min.apply(null, numArray));
+
+//bind
+let button = function(content) {
+  this.content = content;
+};
+button.prototype.click = function() {
+  console.log(`${this.content} clicked`);
+};
+
+let newButton = new button("add");
+let boundClick = newButton.click.bind(newButton);
+
+boundButton();
