@@ -6,7 +6,7 @@ let object = {
 let object1 = {
   num: 5
 };
-let shouldAcessObject = function(arg, arg1, arg2) {
+let shouldAcessObject = function (arg, arg1, arg2) {
   return this.num + arg + arg1 + arg2;
 };
 // addToThis is calling the object, gets all of its properties like num and
@@ -25,7 +25,7 @@ let bound = shouldAcessObject.bind(object);
 // then we can just execute it, as its all binded
 console.log(bound(1, 2, 3));
 
-let add = function(c) {
+let add = function (c) {
   console.log(this.a + this.b + c);
 };
 let obj = {
@@ -36,7 +36,14 @@ let obj = {
 // last param is for add, by doing call, add can acess A, B
 add.call(obj, 3);
 
-let argsToArray = function() {
+// CALL
+// You have a function and then lets say you want to acess something,
+// so it becomes thisFUNCTION.call(thatObject), so the function will get access
+// to variables u need. If the function requres params, then they come last in call
+//e.g (thatObject, "param")
+
+
+let argsToArray = function () {
   // by doing this we transfer arguments into an array
   // array []. has method slice and in it we call arguments
   console.log([].slice.call(arguments));
@@ -44,11 +51,11 @@ let argsToArray = function() {
 
 argsToArray(1, 2, 3);
 
-let mammal = function(legs) {
+let mammal = function (legs) {
   this.legs = legs;
 };
 //here we call for mammal and bind it to cat
-let cat = function(legs, isDomestic) {
+let cat = function (legs, isDomestic) {
   mammal.call(this, legs);
   this.isDomestic = isDomestic;
 };
@@ -63,10 +70,10 @@ let numArray = [1, 2, 3];
 console.log(Math.min.apply(null, numArray));
 
 //bind
-let button = function(content) {
+let button = function (content) {
   this.content = content;
 };
-button.prototype.click = function() {
+button.prototype.click = function () {
   console.log(`${this.content} clicked`);
 };
 
