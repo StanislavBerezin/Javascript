@@ -59,3 +59,20 @@ Object.prototype.toString = function () {
 let redCar = new Car('red')
 
 console.log(redCar.toString())
+
+// OBJECT SET PROTO
+
+let toyota = {
+    drive() {
+        return "driving toyota";
+    }
+}
+let camry = {
+    wifi() {
+        return "using wifi";
+    }
+}
+//So camry recieves functions of toyota
+let see = Object.setPrototypeOf(camry, toyota)
+console.dir(see);
+console.log(camry.drive());
