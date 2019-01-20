@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    margin: 0 auto;
+    width: 70%;
+
+}
+
+.main h1 {
+    text-align: center;
+}
+
+.forms {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    flex-direction: column;
+
+}
+
+.forms p {
+    margin: 10px 0px;
+}
